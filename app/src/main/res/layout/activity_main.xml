@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,473 +14,521 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <android.support.design.widget.AppBarLayout
-        android:id="@+id/AppBarLay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/AppBarLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
 
-    <android.support.v7.widget.Toolbar
-            android:id="@+id/AboutToolBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/AboutToolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <TextView
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:text="Admin Panel"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="22dp" />
+
+                </android.support.v7.widget.Toolbar>
+
+            </android.support.design.widget.AppBarLayout>
+
+            <RelativeLayout
+                android:id="@+id/Rel_Lay_01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Admin Panel"
-                android:fontFamily="@font/montserrat_alternates"
-                android:textSize="22dp"
-                android:textColor="@color/black"
-                android:textAlignment="center"/>
+                android:layout_below="@+id/AppBarLay">
 
-        </android.support.v7.widget.Toolbar>
+                <ImageView
+                    android:id="@+id/AppLogo"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp" />
 
-    </android.support.design.widget.AppBarLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/AppLogo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat_alternates"
+                    android:text="Edit your app"
+                    android:textSize="20sp" />
 
-    <RelativeLayout
-        android:id="@+id/Rel_Lay_01"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/AppBarLay">
+            </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/AppLogo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_alternates"
-        android:text="Edit your app"
-        android:textSize="20sp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/AppLogo"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp" />
-
-    </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/Rel_Lay_02"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Rel_Lay_01"
-            android:visibility="gone"
-            >
-
-            <LinearLayout
-                android:id="@+id/Lin_Lay_01"
+            <RelativeLayout
+                android:id="@+id/Rel_Lay_02"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_below="@+id/Rel_Lay_01">
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardView01"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/Lin_Lay_01"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp"
-                    app:contentPadding="10dp"
-                    style="@style/CardView"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/maincolor">
+                    android:orientation="horizontal">
+
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:id="@+id/CardView01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
 
-                        <ImageView
-                            android:id="@+id/SplashScreenLogo1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:background="@drawable/cardview_bg"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_splash" />
+                    <android.support.v7.widget.CardView
+                        style="@style/CardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        app:cardBackgroundColor="@color/maincolor"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        app:contentPadding="10dp">
 
-                        <TextView
-                            android:id="@+id/SplashScreenTitle1"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/SplashScreenLogo1"
-                            android:layout_margin="5dp"
-                            android:fontFamily="@font/montserrat_alternates"
-                            android:text="Splash Screen"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="17dp" />
+                            android:layout_height="wrap_content">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/SplashScreenTitle1"
-                            android:text="Here you can edit Splash Screen." />
+                            <ImageView
+                                android:id="@+id/SplashScreenLogo1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/cardview_bg"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_splash" />
 
+                            <TextView
+                                android:id="@+id/SplashScreenTitle1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/SplashScreenLogo1"
+                                android:layout_margin="5dp"
+                                android:fontFamily="@font/montserrat_alternates"
+                                android:text="Splash Screen"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/SplashScreenTitle1"
+                                android:text="Here you can edit Splash Screen." />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
                     </RelativeLayout>
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardView02"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp"
-                    app:contentPadding="10dp"
-                    style="@style/CardView"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/maincolor">
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:id="@+id/CardView02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
 
-                        <ImageView
-                            android:id="@+id/SplashScreenLogo2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:background="@drawable/cardview_bg"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_home_web" />
+                    <android.support.v7.widget.CardView
+                        style="@style/CardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        app:cardBackgroundColor="@color/maincolor"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        app:contentPadding="10dp">
 
-                        <TextView
-                            android:id="@+id/SplashScreenTitle2"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/SplashScreenLogo2"
-                            android:layout_margin="5dp"
-                            android:fontFamily="@font/montserrat_alternates"
-                            android:text="Web Page"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="17dp" />
+                            android:layout_height="wrap_content">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/SplashScreenTitle2"
-                            android:text="You can add URL here. (Home WebView)" />
+                            <ImageView
+                                android:id="@+id/SplashScreenLogo2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/cardview_bg"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_home_web" />
 
+                            <TextView
+                                android:id="@+id/SplashScreenTitle2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/SplashScreenLogo2"
+                                android:layout_margin="5dp"
+                                android:fontFamily="@font/montserrat_alternates"
+                                android:text="Web Page"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/SplashScreenTitle2"
+                                android:text="You can add URL here. (Home WebView)" />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
                     </RelativeLayout>
-                </android.support.v7.widget.CardView>
 
-            </LinearLayout>
+                </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/Lin_Lay_02"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/Lin_Lay_01"
-                android:orientation="horizontal">
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardView03"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/Lin_Lay_02"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp"
-                    app:contentPadding="10dp"
-                    style="@style/CardView"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/maincolor">
+                    android:layout_below="@+id/Lin_Lay_01"
+                    android:orientation="horizontal">
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:id="@+id/CardView03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
 
-                        <ImageView
-                            android:id="@+id/SplashScreenLogo3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:background="@drawable/cardview_bg"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_news" />
+                    <android.support.v7.widget.CardView
+                        style="@style/CardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/maincolor"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        app:contentPadding="10dp">
 
-                        <TextView
-                            android:id="@+id/SplashScreenTitle3"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/SplashScreenLogo3"
-                            android:layout_margin="5dp"
-                            android:fontFamily="@font/montserrat_alternates"
-                            android:text="News Page"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="17dp" />
+                            android:layout_height="wrap_content">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/SplashScreenTitle3"
-                            android:text="Here you can edit News Page." />
+                            <ImageView
+                                android:id="@+id/SplashScreenLogo3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/cardview_bg"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_news" />
 
+                            <TextView
+                                android:id="@+id/SplashScreenTitle3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/SplashScreenLogo3"
+                                android:layout_margin="5dp"
+                                android:fontFamily="@font/montserrat_alternates"
+                                android:text="News Page"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/SplashScreenTitle3"
+                                android:text="Here you can edit News Page." />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
                     </RelativeLayout>
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardView04"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp"
-                    app:contentPadding="10dp"
-                    style="@style/CardView"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/maincolor">
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:id="@+id/CardView04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
 
-                        <ImageView
-                            android:id="@+id/SplashScreenLogo4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:background="@drawable/cardview_bg"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_navigation" />
+                    <android.support.v7.widget.CardView
+                        style="@style/CardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/maincolor"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        app:contentPadding="10dp">
 
-                        <TextView
-                            android:id="@+id/SplashScreenTitle4"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/SplashScreenLogo4"
-                            android:layout_margin="5dp"
-                            android:fontFamily="@font/montserrat_alternates"
-                            android:text="Nav. Menu"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="17dp" />
+                            android:layout_height="wrap_content">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/SplashScreenTitle4"
-                            android:text="Here you can edit Navigation Menu." />
+                            <ImageView
+                                android:id="@+id/SplashScreenLogo4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/cardview_bg"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_navigation" />
 
+                            <TextView
+                                android:id="@+id/SplashScreenTitle4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/SplashScreenLogo4"
+                                android:layout_margin="5dp"
+                                android:fontFamily="@font/montserrat_alternates"
+                                android:text="Nav. Menu"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/SplashScreenTitle4"
+                                android:text="Here you can edit Navigation Menu." />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
                     </RelativeLayout>
-                </android.support.v7.widget.CardView>
 
-            </LinearLayout>
+                </LinearLayout>
 
 
-            <LinearLayout
-                android:id="@+id/Lin_Lay_03"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/Lin_Lay_02"
-                android:orientation="horizontal">
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardView05"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/Lin_Lay_03"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp"
-                    app:contentPadding="10dp"
-                    style="@style/CardView"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/maincolor">
+                    android:layout_below="@+id/Lin_Lay_02"
+                    android:orientation="horizontal">
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:id="@+id/CardView05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
 
-                        <ImageView
-                            android:id="@+id/SplashScreenLogo5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:background="@drawable/cardview_bg"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_about" />
+                    <android.support.v7.widget.CardView
+                        style="@style/CardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/maincolor"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        app:contentPadding="10dp">
 
-                        <TextView
-                            android:id="@+id/SplashScreenTitle5"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/SplashScreenLogo5"
-                            android:layout_margin="5dp"
-                            android:fontFamily="@font/montserrat_alternates"
-                            android:text="About Us"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="17dp" />
+                            android:layout_height="wrap_content">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/SplashScreenTitle5"
-                            android:text="Here you can edit About Us Page." />
+                            <ImageView
+                                android:id="@+id/SplashScreenLogo5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/cardview_bg"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_about" />
 
+                            <TextView
+                                android:id="@+id/SplashScreenTitle5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/SplashScreenLogo5"
+                                android:layout_margin="5dp"
+                                android:fontFamily="@font/montserrat_alternates"
+                                android:text="About Us"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/SplashScreenTitle5"
+                                android:text="Here you can edit About Us Page." />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
                     </RelativeLayout>
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardView06"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp"
-                    app:contentPadding="10dp"
-                    style="@style/CardView"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/maincolor">
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:id="@+id/CardView06"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
 
-                        <ImageView
-                            android:id="@+id/SplashScreenLogo6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:background="@drawable/cardview_bg"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_contact" />
+                    <android.support.v7.widget.CardView
+                        style="@style/CardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/maincolor"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        app:contentPadding="10dp">
 
-                        <TextView
-                            android:id="@+id/SplashScreenTitle6"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/SplashScreenLogo6"
-                            android:layout_margin="5dp"
-                            android:fontFamily="@font/montserrat_alternates"
-                            android:text="Contact Us"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="17dp" />
+                            android:layout_height="wrap_content">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/SplashScreenTitle6"
-                            android:text="Here you can edit Contact Us Page." />
+                            <ImageView
+                                android:id="@+id/SplashScreenLogo6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/cardview_bg"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_contact" />
 
+                            <TextView
+                                android:id="@+id/SplashScreenTitle6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/SplashScreenLogo6"
+                                android:layout_margin="5dp"
+                                android:fontFamily="@font/montserrat_alternates"
+                                android:text="Contact Us"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/SplashScreenTitle6"
+                                android:text="Here you can edit Contact Us Page." />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
                     </RelativeLayout>
-                </android.support.v7.widget.CardView>
 
-            </LinearLayout>
+                </LinearLayout>
 
 
-            <LinearLayout
-                android:id="@+id/Lin_Lay_04"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/Lin_Lay_03"
-                android:orientation="horizontal">
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardView07"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/Lin_Lay_04"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp"
-                    app:contentPadding="10dp"
-                    style="@style/CardView"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/maincolor">
+                    android:layout_below="@+id/Lin_Lay_03"
+                    android:orientation="horizontal">
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:id="@+id/CardView07"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
 
-                        <ImageView
-                            android:id="@+id/SplashScreenLogo7"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:background="@drawable/cardview_bg"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_follow" />
+                    <android.support.v7.widget.CardView
+                        style="@style/CardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/maincolor"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        app:contentPadding="10dp">
 
-                        <TextView
-                            android:id="@+id/SplashScreenTitle7"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/SplashScreenLogo7"
-                            android:layout_margin="5dp"
-                            android:fontFamily="@font/montserrat_alternates"
-                            android:text="Follow Us"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="17dp" />
+                            android:layout_height="wrap_content">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/SplashScreenTitle7"
-                            android:text="Here you can edit Follow Us Page." />
+                            <ImageView
+                                android:id="@+id/SplashScreenLogo7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/cardview_bg"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_follow" />
 
+                            <TextView
+                                android:id="@+id/SplashScreenTitle7"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/SplashScreenLogo7"
+                                android:layout_margin="5dp"
+                                android:fontFamily="@font/montserrat_alternates"
+                                android:text="Follow Us"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/SplashScreenTitle7"
+                                android:text="Here you can edit Follow Us Page." />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
                     </RelativeLayout>
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardView08"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp"
-                    app:contentPadding="10dp"
-                    style="@style/CardView"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/maincolor">
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:id="@+id/CardView08"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
 
-                        <ImageView
-                            android:id="@+id/SplashScreenLogo8"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:background="@drawable/cardview_bg"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_notification" />
+                    <android.support.v7.widget.CardView
+                        style="@style/CardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/maincolor"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        app:contentPadding="10dp">
 
-                        <TextView
-                            android:id="@+id/SplashScreenTitle8"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/SplashScreenLogo8"
-                            android:layout_margin="5dp"
-                            android:fontFamily="@font/montserrat_alternates"
-                            android:text="Notification"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="17dp" />
+                            android:layout_height="wrap_content">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/SplashScreenTitle8"
-                            android:text="Here you can push a Notification." />
+                            <ImageView
+                                android:id="@+id/SplashScreenLogo8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/cardview_bg"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_notification" />
 
+                            <TextView
+                                android:id="@+id/SplashScreenTitle8"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/SplashScreenLogo8"
+                                android:layout_margin="5dp"
+                                android:fontFamily="@font/montserrat_alternates"
+                                android:text="Notification"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/SplashScreenTitle8"
+                                android:text="Here you can push a Notification." />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
                     </RelativeLayout>
-                </android.support.v7.widget.CardView>
 
-            </LinearLayout>
+                </LinearLayout>
 
 
-        </RelativeLayout>
+            </RelativeLayout>
 
         </RelativeLayout>
 
     </ScrollView>
+
+    <include layout="@layout/menu_splash_screen" />
+
 </RelativeLayout>

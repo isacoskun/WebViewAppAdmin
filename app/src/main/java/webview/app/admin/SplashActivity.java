@@ -20,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(homeIntent);
                 finish();
             }
-        },3000); /** 3000 Millis  =  "3 Seconds" */
+        },500); /** 3000 Millis  =  "3 Seconds" */
 
     }
 

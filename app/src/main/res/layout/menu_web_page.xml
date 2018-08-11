@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Rel_WebPage_Menu"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/AppBarLayWebPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/WebPageBackButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_back"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:backgroundTint="@color/maincolor"
+                app:fabSize="mini"
+                app:rippleColor="@android:color/black" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_alternates"
+                android:text="Web Page"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="22dp" />
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/CardViewWebPage"
+        style="@style/CardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/AppBarLayWebPage"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/maincolor"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:contentPadding="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/WebPageTitle02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/cardview_bg"
+                android:padding="2dp"
+                android:text="Edit web page (Home Web Page)"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <WebView
+                android:id="@+id/WebPageCard"
+                android:layout_width="200dp"
+                android:layout_height="300dp"
+                android:layout_below="@+id/WebPageTitle02"
+                android:layout_marginTop="20dp"
+                tools:ignore="WebViewLayout" />
+
+            <TextView
+                android:id="@+id/WebPageLogoTitleCard02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/WebPageTitle02"
+                android:layout_marginStart="10dp"
+                android:text="Add a direct link to your web address"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/WebPageTitleCard03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/WebPageTitle02"
+                android:layout_marginStart="10dp"
+                android:text="(Check the sample URL)"
+                android:textAlignment="center"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/SplashLogoTitleCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/WebPageCard"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:text="Current Home Web Page"
+                android:textAlignment="center"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/EditTextWebPage01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/WebPageCard"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cardview_bg2"
+                android:hint="Add Home Web Page URL"
+                android:padding="5dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/WebPageTitleCard04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/EditTextWebPage01"
+                android:layout_marginTop="5dp"
+                android:text="Example: http://ico3dstudio.tk/webviewapp.html"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/WebPageButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/WebPageTitleCard04"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_send"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:backgroundTint="@color/white"
+                app:rippleColor="@android:color/black" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+</RelativeLayout>
