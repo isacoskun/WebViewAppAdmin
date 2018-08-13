@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/Rel_Splash_Menu"
+    android:id="@+id/Rel_News_Menu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cardview_dark_background"
@@ -16,7 +16,7 @@
             android:layout_height="wrap_content">
 
             <android.support.design.widget.AppBarLayout
-                android:id="@+id/AppBarLaySplash"
+                android:id="@+id/AppBarLayNews"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -25,12 +25,10 @@
                     android:layout_height="wrap_content">
 
                     <android.support.design.widget.FloatingActionButton
-                        android:id="@+id/SplashBackButton"
+                        android:id="@+id/NewsBackButton"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@drawable/ic_back"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
                         app:backgroundTint="@color/maincolor"
                         app:fabSize="mini"
                         app:rippleColor="@android:color/black" />
@@ -40,21 +38,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat_alternates"
-                        android:text="Splash Screen"
+                        android:text="News Page"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="22dp" />
 
                 </android.support.v7.widget.Toolbar>
-
             </android.support.design.widget.AppBarLayout>
 
             <android.support.v7.widget.CardView
-                android:id="@+id/CardViewSplash"
+                android:id="@+id/CardViewPromotion01"
                 style="@style/CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/AppBarLaySplash"
+                android:layout_below="@+id/AppBarLayNews"
                 android:layout_marginBottom="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="10dp"
@@ -69,126 +66,133 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/SplashTitle02"
+                        android:id="@+id/NewsTitle01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:background="@drawable/cardview_bg"
                         android:padding="2dp"
-                        android:text="Edit splash screen logo"
+                        android:text="Edit news page (Promotion 01)"
                         android:textAlignment="center"
                         android:textSize="18sp" />
 
-                    <ImageView
-                        android:id="@+id/SplashLogoCard"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_below="@+id/SplashTitle02"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/cardview_bg4"
-                        android:padding="10dp" />
+                    <com.flaviofaria.kenburnsview.KenBurnsView
+                        android:id="@+id/IntroImage01"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_below="@+id/NewsTitleCard02"
+                        android:layout_marginTop="20dp" />
 
                     <TextView
-                        android:id="@+id/SplashLogoTitleCard02"
+                        android:id="@+id/NewsTitleCard01"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_alignTop="@+id/SplashLogoCard"
-                        android:text="Image size: 600 x 600"
+                        android:layout_below="@+id/NewsTitle01"
+                        android:layout_marginTop="20dp"
+                        android:text="Image size: 1080 x 400"
                         android:textSize="13sp" />
 
                     <TextView
-                        android:id="@+id/SplashLogoTitleCard03"
+                        android:id="@+id/NewsTitleCard02"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_below="@+id/SplashLogoTitleCard02"
-                        android:text="(Use the recommended image size)"
+                        android:layout_below="@+id/NewsTitleCard01"
+                        android:text="(Add a direct link to your  *Intro Image 01 URL. Use the recommended image size)"
                         android:textAlignment="center"
                         android:textSize="13sp" />
 
                     <TextView
-                        android:id="@+id/SplashLogoTitleCard"
+                        android:id="@+id/NewsTitleCard03"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignBottom="@+id/SplashLogoCard"
                         android:layout_alignParentEnd="true"
-                        android:text="Current splash screen logo"
+                        android:layout_below="@+id/IntroImage01"
+                        android:layout_marginTop="20dp"
+                        android:text="Current Intro Image 01"
                         android:textAlignment="center"
                         android:textSize="13sp" />
 
                     <EditText
-                        android:id="@+id/EditTextSplash01"
+                        android:id="@+id/EditTextNews01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/SplashLogoCard"
+                        android:layout_below="@+id/NewsTitleCard03"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/cardview_bg2"
-                        android:hint="Add Splash Screen Logo URL"
+                        android:hint="Add Intro Image 01 URL"
                         android:padding="5dp"
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/SplashLogoTitleCard04"
+                        android:id="@+id/NewsTitleCard04"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/EditTextSplash01"
+                        android:layout_below="@+id/EditTextNews01"
                         android:layout_marginTop="5dp"
-                        android:text="Example: http://i.hizliresim.com/VDYmrB.png"
+                        android:text="Example: https://www.n4l.co.nz/wp-content/uploads/2016/01/Google-Search_2016-1080x400.jpg"
                         android:textAlignment="center"
                         android:textSize="12sp" />
 
                     <android.support.design.widget.FloatingActionButton
-                        android:id="@+id/SplashLogoButton"
+                        android:id="@+id/IntroImage01Button"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_below="@+id/SplashLogoTitleCard04"
+                        android:layout_below="@+id/NewsTitleCard04"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:src="@drawable/ic_send"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
                         app:backgroundTint="@color/white"
                         app:rippleColor="@android:color/black" />
 
-                </RelativeLayout>
-            </android.support.v7.widget.CardView>
+                    <RelativeLayout
+                        android:id="@+id/LineNews"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/IntroImage01Button"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg">
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/CardViewSplash2"
-                style="@style/CardView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/CardViewSplash"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/maincolor"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp"
-                app:contentPadding="10dp">
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    </RelativeLayout>
 
                     <TextView
-                        android:id="@+id/SplashTitle03"
+                        android:id="@+id/NewsTitle02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
+                        android:layout_below="@+id/LineNews"
                         android:background="@drawable/cardview_bg"
                         android:padding="2dp"
-                        android:text="Edit splash screen title"
+                        android:text="Edit news page (Promotion 01)"
                         android:textAlignment="center"
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/TitleSplashCard"
+                        android:id="@+id/NewsTitleCard05"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/SplashTitle03"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/NewsTitle02"
+                        android:layout_marginTop="20dp"
+                        android:text="Make sure your title is not long"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard06"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/NewsTitleCard05"
+                        android:text="(Recommended character count is 24)"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/TitleNewsCard01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/NewsTitleCard06"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/cardview_bg"
                         android:fontFamily="@font/montserrat_alternates"
@@ -197,72 +201,41 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/SplashLogoTitleCard05"
+                        android:id="@+id/NewsTitleCard07"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_below="@+id/SplashLogoTitleCard07"
-                        android:layout_marginTop="20dp"
-                        android:text="Make sure your title is not long"
-                        android:textSize="13sp" />
-
-                    <TextView
-                        android:id="@+id/SplashLogoTitleCard06"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_below="@+id/SplashLogoTitleCard05"
-                        android:text="(Recommended character count is 24)"
-                        android:textAlignment="center"
-                        android:textSize="13sp" />
-
-                    <TextView
-                        android:id="@+id/SplashLogoTitleCard07"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_below="@+id/TitleSplashCard"
+                        android:layout_below="@+id/TitleNewsCard01"
                         android:layout_marginTop="10dp"
                         android:text="Current splash screen title"
                         android:textAlignment="center"
                         android:textSize="13sp" />
 
                     <EditText
-                        android:id="@+id/EditTextSplash02"
+                        android:id="@+id/EditTextNews02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/SplashLogoTitleCard06"
+                        android:layout_below="@+id/NewsTitleCard07"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/cardview_bg2"
-                        android:hint="Add Splash Screen Title"
+                        android:hint="Add Intro Image 01 URL"
                         android:padding="5dp"
                         android:textSize="14sp" />
 
-                    <TextView
-                        android:id="@+id/SplashLogoTitleCard08"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/EditTextSplash02"
-                        android:layout_marginTop="5dp"
-                        android:text="Example: WebView App"
-                        android:textAlignment="center"
-                        android:textSize="12sp" />
-
                     <android.support.design.widget.FloatingActionButton
-                        android:id="@+id/SplashLogoButton02"
+                        android:id="@+id/IntroTitle01Button"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_below="@+id/SplashLogoTitleCard08"
+                        android:layout_below="@+id/EditTextNews02"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:src="@drawable/ic_send"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
                         app:backgroundTint="@color/white"
                         app:rippleColor="@android:color/black" />
 
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
+
 
         </RelativeLayout>
     </ScrollView>

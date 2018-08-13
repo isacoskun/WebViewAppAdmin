@@ -1,5 +1,6 @@
 package webview.app.admin;
 
+import android.annotation.SuppressLint;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +10,9 @@ import android.support.v7.widget.CardView;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -18,6 +22,7 @@ import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.dd.morphingbutton.MorphingButton;
+import com.flaviofaria.kenburnsview.KenBurnsView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,13 +34,18 @@ import com.transitionseverywhere.TransitionManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    DatabaseReference mDatabase;
+    DatabaseReference mDatabase,mDatabase2,mDatabase3;
     ImageView AppLogo,SplashLogoCard;
-    RelativeLayout Rel_Splash_Menu,CardView01,CardView02,CardView03,CardView04,CardView05,CardView06,CardView07,CardView08;
+    RelativeLayout Rel_Splash_Menu,CardView01,CardView02,CardView03,CardView04,CardView05,CardView06,CardView07,CardView08,Rel_WebPage_Menu,Rel_News_Menu;
 
-    TextView TitleSplashCard;
-    EditText EditTextSplash01,EditTextSplash02;
-    FloatingActionButton SplashLogoButton,SplashBackButton,SplashLogoButton02;
+    TextView TitleSplashCard,TitleNewsCard01;
+    EditText EditTextSplash01,EditTextSplash02,EditTextWebPage01,EditTextNews01,EditTextNews02;
+    FloatingActionButton SplashLogoButton,SplashLogoButton02,SplashBackButton,WebPageBackButton,WebPageButton,NewsBackButton,IntroImage01Button,IntroTitle01Button;
+
+    WebView WebPageCard;
+    String WebPageMenuUrl;
+
+    KenBurnsView IntroImage01;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +53,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        mDatabase = FirebaseDatabase.getInstance().getReference("My_Splash_Screen");
+        mDatabase2 = FirebaseDatabase.getInstance().getReference("WebPage");
+        mDatabase3 = FirebaseDatabase.getInstance().getReference("PromotionPage");
+
+
         AppLogo = (ImageView)findViewById(R.id.AppLogo);
         SplashLogoCard = (ImageView)findViewById(R.id.SplashLogoCard);
 
+        IntroImage01 = (KenBurnsView)findViewById(R.id.IntroImage01);
 
         CardView01 = (RelativeLayout)findViewById(R.id.CardView01);
         CardView02 = (RelativeLayout)findViewById(R.id.CardView02);
@@ -56,29 +72,33 @@ public class MainActivity extends AppCompatActivity {
         CardView07 = (RelativeLayout)findViewById(R.id.CardView07);
         CardView08 = (RelativeLayout)findViewById(R.id.CardView08);
         Rel_Splash_Menu  = (RelativeLayout)findViewById(R.id.Rel_Splash_Menu);
+        Rel_WebPage_Menu  = (RelativeLayout)findViewById(R.id.Rel_WebPage_Menu);
+        Rel_News_Menu  = (RelativeLayout)findViewById(R.id.Rel_News_Menu);
+
 
         TitleSplashCard = (TextView)findViewById(R.id.TitleSplashCard);
+        TitleNewsCard01 = (TextView)findViewById(R.id.TitleNewsCard01);
+
+
         EditTextSplash01 = (EditText)findViewById(R.id.EditTextSplash01);
         EditTextSplash02 = (EditText)findViewById(R.id.EditTextSplash02);
+        EditTextWebPage01 = (EditText)findViewById(R.id.EditTextWebPage01);
+        EditTextNews01 = (EditText)findViewById(R.id.EditTextNews01);
+        EditTextNews02 = (EditText)findViewById(R.id.EditTextNews02);
+
+
+        SplashBackButton = (FloatingActionButton)findViewById(R.id.SplashBackButton);
+        WebPageBackButton = (FloatingActionButton)findViewById(R.id.WebPageBackButton);
+        NewsBackButton = (FloatingActionButton)findViewById(R.id.NewsBackButton);
+
 
         SplashLogoButton02 = (FloatingActionButton)findViewById(R.id.SplashLogoButton02);
-        SplashBackButton = (FloatingActionButton)findViewById(R.id.SplashBackButton);
         SplashLogoButton = (FloatingActionButton)findViewById(R.id.SplashLogoButton);
+        WebPageButton = (FloatingActionButton)findViewById(R.id.WebPageButton);
+        IntroImage01Button = (FloatingActionButton)findViewById(R.id.IntroImage01Button);
+        IntroTitle01Button = (FloatingActionButton)findViewById(R.id.IntroTitle01Button);
 
-        CardView02.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        CardView03.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
+        WebPageCard = (WebView)findViewById(R.id.WebPageCard);
 
         CardView04.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,24 +140,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ShowAppLogoData();
+        MainMenuData();
         SplashScreenMenu();
+        WebPageMenu();
+        NewsMenu();
+
     }
 
-    private boolean hasContent(EditText et) {
-        /** Always assume false until proven otherwise */
-        boolean bHasContent = false;
+    private void MainMenuData() {
 
-        if (et.getText().toString().trim().length() > 0) {
-            /** Got content */
-            bHasContent = true;
-        }
-        return bHasContent;
+        mDatabase.child("Splash_Logo").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String url = dataSnapshot.getValue(String.class);
+
+                Picasso.get()
+                        .load(url)
+                        .resize(600,600)
+                        .into(AppLogo);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+
     }
 
     private void SplashScreenMenu() {
-
-        Rel_Splash_Menu.setVisibility(View.GONE);
 
         CardView01.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,8 +175,18 @@ public class MainActivity extends AppCompatActivity {
 
                 final ViewGroup transitionsContainer = (ViewGroup)findViewById(R.id.Rel_Splash_Menu);
                 TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.TOP));
-                transitionsContainer.setVisibility(View.VISIBLE);
+                Rel_Splash_Menu.setVisibility(View.VISIBLE);
 
+            }
+        });
+
+        SplashBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final ViewGroup transitionsContainer = (ViewGroup)findViewById(R.id.Rel_Splash_Menu);
+                TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.TOP));
+                Rel_Splash_Menu.setVisibility(View.GONE);
             }
         });
 
@@ -167,26 +207,6 @@ public class MainActivity extends AppCompatActivity {
                 mDatabase.child("Splash_Title").setValue(string);
             }
         });
-
-        SplashBackButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                final ViewGroup transitionsContainer = (ViewGroup)findViewById(R.id.Rel_Splash_Menu);
-                TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.TOP));
-                transitionsContainer.setVisibility(View.GONE);
-            }
-        });
-
-        if (hasContent(EditTextSplash02)) {
-
-            SplashLogoButton02.setEnabled(true);
-        } else {
-
-            SplashLogoButton02.setEnabled(false);
-        }
-
-        mDatabase = FirebaseDatabase.getInstance().getReference("My_Splash_Screen");
 
         mDatabase.child("Splash_Logo").addValueEventListener(new ValueEventListener() {
             @Override
@@ -220,19 +240,48 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void ShowAppLogoData() {
+    @SuppressLint("SetJavaScriptEnabled")
+    private void WebPageMenu() {
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("My_Splash_Screen");
+        CardView02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        mDatabase.child("Splash_Logo").addValueEventListener(new ValueEventListener() {
+                final ViewGroup transitionsContainer = (ViewGroup)findViewById(R.id.Rel_WebPage_Menu);
+                TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.BOTTOM));
+                Rel_WebPage_Menu.setVisibility(View.VISIBLE);
+            }
+        });
+
+        WebPageBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final ViewGroup transitionsContainer = (ViewGroup)findViewById(R.id.Rel_WebPage_Menu);
+                TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.BOTTOM));
+                Rel_WebPage_Menu.setVisibility(View.GONE);
+
+                WebPageCard.loadUrl(WebPageMenuUrl);
+            }
+        });
+
+        WebPageCard .getSettings().setJavaScriptEnabled(true);
+        WebPageCard .setFocusable(true);
+        WebPageCard .setFocusableInTouchMode(true);
+        WebPageCard .getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        WebPageCard .getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        WebPageCard .getSettings().setDomStorageEnabled(true);
+        WebPageCard .getSettings().setDatabaseEnabled(true);
+        WebPageCard .getSettings().setAppCacheEnabled(true);
+        WebPageCard .setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        WebPageCard .setWebViewClient(new WebViewClient());
+
+        mDatabase2.child("WebPageURL").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String url = dataSnapshot.getValue(String.class);
+                WebPageMenuUrl = dataSnapshot.getValue(String.class);
 
-                Picasso.get()
-                        .load(url)
-                        .resize(600,600)
-                        .into(AppLogo);
+                WebPageCard.loadUrl(WebPageMenuUrl);
             }
 
             @Override
@@ -240,6 +289,86 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        WebPageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextWebPage01.getText().toString();
+                mDatabase2.child("WebPageURL").setValue(string);
+            }
+        });
+    }
+
+    private void NewsMenu() {
+
+        CardView03.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final ViewGroup transitionsContainer = (ViewGroup)findViewById(R.id.Rel_News_Menu);
+                TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.RIGHT));
+                Rel_News_Menu.setVisibility(View.VISIBLE);
+            }
+        });
+
+        NewsBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final ViewGroup transitionsContainer = (ViewGroup)findViewById(R.id.Rel_News_Menu);
+                TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.RIGHT));
+                Rel_News_Menu.setVisibility(View.GONE);
+            }
+        });
+
+        mDatabase3.child("IntroImage01").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String url = dataSnapshot.getValue(String.class);
+
+                Picasso.get()
+                        .load(url)
+                        .resize(1080,400)
+                        .into(IntroImage01);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        mDatabase3.child("IntroImageTitle01").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String url = dataSnapshot.getValue(String.class);
+
+                TitleNewsCard01.setText(url);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        IntroImage01Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextNews01.getText().toString();
+                mDatabase3.child("IntroImage01").setValue(string);
+            }
+        });
+
+        IntroTitle01Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextNews02.getText().toString();
+                mDatabase3.child("IntroImageTitle01").setValue(string);
+            }
+        });
     }
 
 }

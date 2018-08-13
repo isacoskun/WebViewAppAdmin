@@ -529,6 +529,10 @@
 
     </ScrollView>
 
+
     <include layout="@layout/menu_splash_screen" />
+    <include layout="@layout/menu_web_page" />
+    <include layout="@layout/menu_news" />
+
 
 </RelativeLayout>
