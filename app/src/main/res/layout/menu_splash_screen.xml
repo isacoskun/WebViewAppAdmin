@@ -75,7 +75,7 @@
                         android:layout_alignParentTop="true"
                         android:background="@drawable/cardview_bg"
                         android:padding="2dp"
-                        android:text="Edit splash screen logo"
+                        android:text="Edit Splash Screen Logo"
                         android:textAlignment="center"
                         android:textSize="18sp" />
 
@@ -180,7 +180,7 @@
                         android:layout_alignParentTop="true"
                         android:background="@drawable/cardview_bg"
                         android:padding="2dp"
-                        android:text="Edit splash screen title"
+                        android:text="Edit Splash Screen Title"
                         android:textAlignment="center"
                         android:textSize="18sp" />
 
@@ -188,7 +188,7 @@
                         android:id="@+id/TitleSplashCard"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/SplashTitle03"
+                        android:layout_below="@+id/SplashLogoTitleCard06"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/cardview_bg"
                         android:fontFamily="@font/montserrat_alternates"
@@ -201,7 +201,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_below="@+id/SplashLogoTitleCard07"
+                        android:layout_below="@+id/SplashTitle03"
                         android:layout_marginTop="20dp"
                         android:text="Make sure your title is not long"
                         android:textSize="13sp" />
@@ -212,7 +212,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_below="@+id/SplashLogoTitleCard05"
-                        android:text="(Recommended character count is 24)"
+                        android:text="(The recommended number of characters is 24)"
                         android:textAlignment="center"
                         android:textSize="13sp" />
 
@@ -231,7 +231,7 @@
                         android:id="@+id/EditTextSplash02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/SplashLogoTitleCard06"
+                        android:layout_below="@+id/SplashLogoTitleCard07"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/cardview_bg2"
                         android:hint="Add Splash Screen Title"

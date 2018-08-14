@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/Rel_News_Menu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -52,7 +53,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/AppBarLayNews"
-                android:layout_marginBottom="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
@@ -72,16 +72,9 @@
                         android:layout_alignParentTop="true"
                         android:background="@drawable/cardview_bg"
                         android:padding="2dp"
-                        android:text="Edit news page (Promotion 01)"
+                        android:text="Edit Promotion 01 (Intro Image 01)"
                         android:textAlignment="center"
                         android:textSize="18sp" />
-
-                    <com.flaviofaria.kenburnsview.KenBurnsView
-                        android:id="@+id/IntroImage01"
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:layout_below="@+id/NewsTitleCard02"
-                        android:layout_marginTop="20dp" />
 
                     <TextView
                         android:id="@+id/NewsTitleCard01"
@@ -100,8 +93,15 @@
                         android:layout_alignParentEnd="true"
                         android:layout_below="@+id/NewsTitleCard01"
                         android:text="(Add a direct link to your  *Intro Image 01 URL. Use the recommended image size)"
-                        android:textAlignment="center"
+                        android:textAlignment="textEnd"
                         android:textSize="13sp" />
+
+                    <com.flaviofaria.kenburnsview.KenBurnsView
+                        android:id="@+id/IntroImage01"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_below="@+id/NewsTitleCard02"
+                        android:layout_marginTop="20dp" />
 
                     <TextView
                         android:id="@+id/NewsTitleCard03"
@@ -164,7 +164,7 @@
                         android:layout_below="@+id/LineNews"
                         android:background="@drawable/cardview_bg"
                         android:padding="2dp"
-                        android:text="Edit news page (Promotion 01)"
+                        android:text="Edit Promotion 01 (Intro Title 01)"
                         android:textAlignment="center"
                         android:textSize="18sp" />
 
@@ -184,8 +184,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_below="@+id/NewsTitleCard05"
-                        android:text="(Recommended character count is 24)"
-                        android:textAlignment="center"
+                        android:text="(The maximum number of characters recommended is 60)"
+                        android:textAlignment="textEnd"
                         android:textSize="13sp" />
 
                     <TextView
@@ -207,7 +207,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_below="@+id/TitleNewsCard01"
                         android:layout_marginTop="10dp"
-                        android:text="Current splash screen title"
+                        android:text="Current Intro Title 01"
                         android:textAlignment="center"
                         android:textSize="13sp" />
 
@@ -218,15 +218,116 @@
                         android:layout_below="@+id/NewsTitleCard07"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/cardview_bg2"
-                        android:hint="Add Intro Image 01 URL"
+                        android:hint="Add Intro Title 01"
                         android:padding="5dp"
                         android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard08"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextNews02"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: Let's visit the Google web page"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
 
                     <android.support.design.widget.FloatingActionButton
                         android:id="@+id/IntroTitle01Button"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_below="@+id/EditTextNews02"
+                        android:layout_below="@+id/NewsTitleCard08"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                    <RelativeLayout
+                        android:id="@+id/LineNews2"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/IntroTitle01Button"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg"></RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/NewsTitle03"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/LineNews2"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="2dp"
+                        android:text="Edit Promotion 01 (Web Page 01)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard09"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/NewsTitle03"
+                        android:layout_marginTop="20dp"
+                        android:text="Add a direct link to your promotion01 web address"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/NewsTitleCard09"
+                        android:text="(Check the sample URL)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <WebView
+                        android:id="@+id/WebPageNewsCard01"
+                        android:layout_width="match_parent"
+                        android:layout_height="500dp"
+                        android:layout_below="@+id/NewsTitleCard10"
+                        android:layout_marginTop="20dp"
+                        tools:ignore="WebViewLayout" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/WebPageNewsCard01"
+                        android:layout_marginTop="20dp"
+                        android:text="Current Promotion01 Web Page"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextNews03"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/NewsTitleCard11"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Promotion01 Web Page URL"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextNews03"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: https//:www.google.com"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/WebPage01Button"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/NewsTitleCard12"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:src="@drawable/ic_send"
@@ -236,6 +337,584 @@
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
+            <android.support.v7.widget.CardView
+                android:id="@+id/CardViewPromotion02"
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/CardViewPromotion01"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/maincolor"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/NewsTitle04"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="2dp"
+                        android:text="Edit Promotion 02 (Intro Image 02)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/NewsTitle04"
+                        android:layout_marginTop="20dp"
+                        android:text="Image size: 1080 x 400"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/NewsTitleCard13"
+                        android:text="(Add a direct link to your  *Intro Image 02 URL. Use the recommended image size)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <com.flaviofaria.kenburnsview.KenBurnsView
+                        android:id="@+id/IntroImage02"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_below="@+id/NewsTitleCard14"
+                        android:layout_marginTop="20dp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/IntroImage02"
+                        android:layout_marginTop="20dp"
+                        android:text="Current Intro Image 02"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextNews04"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/NewsTitleCard15"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Intro Image 02 URL"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextNews04"
+                        android:layout_marginTop="5dp"
+                        android:text='"https://www.n4l.co.nz/wp-content/uploads/2017/07/Blog-Youtube-1080x400.jpg"'
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/IntroImage02Button"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/NewsTitleCard16"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                    <RelativeLayout
+                        android:id="@+id/LineNews3"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/IntroImage02Button"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg">
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/NewsTitle05"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/LineNews3"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="2dp"
+                        android:text="Edit Promotion 02 (Intro Title 02)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/NewsTitle05"
+                        android:layout_marginTop="20dp"
+                        android:text="Make sure your title is not long"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/NewsTitleCard17"
+                        android:text="(The maximum number of characters recommended is 60)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/TitleNewsCard02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/NewsTitleCard18"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/TitleNewsCard02"
+                        android:layout_marginTop="10dp"
+                        android:text="Current Intro Title 02"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextNews05"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/NewsTitleCard19"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Intro Title 02"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextNews05"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: Let's visit the Youtube web page"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/IntroTitle02Button"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/NewsTitleCard20"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                    <RelativeLayout
+                        android:id="@+id/LineNews4"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/IntroTitle02Button"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg"></RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/NewsTitle06"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/LineNews4"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="2dp"
+                        android:text="Edit Promotion 02 (Web Page 02)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/NewsTitle06"
+                        android:layout_marginTop="20dp"
+                        android:text="Add a direct link to your promotion02 web address"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/NewsTitleCard21"
+                        android:text="(Check the sample URL)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <WebView
+                        android:id="@+id/WebPageNewsCard02"
+                        android:layout_width="match_parent"
+                        android:layout_height="500dp"
+                        android:layout_below="@+id/NewsTitleCard22"
+                        android:layout_marginTop="20dp"
+                        tools:ignore="WebViewLayout" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/WebPageNewsCard02"
+                        android:layout_marginTop="20dp"
+                        android:text="Current Promotion02 Web Page"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextNews06"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/NewsTitleCard23"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Promotion02 Web Page URL"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextNews06"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: https//:www.youtube.com"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/WebPage02Button"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/NewsTitleCard24"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/CardViewPromotion03"
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/CardViewPromotion02"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/maincolor"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/NewsTitle07"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="2dp"
+                        android:text="Edit Promotion 03 (Intro Image 03)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/NewsTitle07"
+                        android:layout_marginTop="20dp"
+                        android:text="Image size: 1080 x 400"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard26"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/NewsTitleCard25"
+                        android:text="(Add a direct link to your  *Intro Image 03 URL. Use the recommended image size)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <com.flaviofaria.kenburnsview.KenBurnsView
+                        android:id="@+id/IntroImage03"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_below="@+id/NewsTitleCard26"
+                        android:layout_marginTop="20dp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard27"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/IntroImage03"
+                        android:layout_marginTop="20dp"
+                        android:text="Current Intro Image 03"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextNews07"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/NewsTitleCard27"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Intro Image 03 URL"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard28"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextNews07"
+                        android:layout_marginTop="5dp"
+                        android:text="http://i.hizliresim.com/DDdlGl.jpg"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/IntroImage03Button"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/NewsTitleCard28"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                    <RelativeLayout
+                        android:id="@+id/LineNews5"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/IntroImage03Button"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg"></RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/NewsTitle08"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/LineNews5"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="2dp"
+                        android:text="Edit Promotion 03 (Intro Title 03)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard29"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/NewsTitle08"
+                        android:layout_marginTop="20dp"
+                        android:text="Make sure your title is not long"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/NewsTitleCard29"
+                        android:text="(The maximum number of characters recommended is 60)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/TitleNewsCard03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/NewsTitleCard30"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard31"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/TitleNewsCard03"
+                        android:layout_marginTop="10dp"
+                        android:text="Current Intro Title 03"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextNews08"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/NewsTitleCard31"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Intro Title 03"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard32"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextNews08"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: Let's visit the HTML web page"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/IntroTitle03Button"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/NewsTitleCard32"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                    <RelativeLayout
+                        android:id="@+id/LineNews6"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/IntroTitle03Button"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg"></RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/NewsTitle09"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/LineNews6"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="2dp"
+                        android:text="Edit Promotion 03 (Web Page 03)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard33"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/NewsTitle09"
+                        android:layout_marginTop="20dp"
+                        android:text="Add a direct link to your promotion03 web address"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard34"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/NewsTitleCard33"
+                        android:text="(Check the sample URL)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <WebView
+                        android:id="@+id/WebPageNewsCard03"
+                        android:layout_width="match_parent"
+                        android:layout_height="500dp"
+                        android:layout_below="@+id/NewsTitleCard34"
+                        android:layout_marginTop="20dp"
+                        tools:ignore="WebViewLayout" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard35"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/WebPageNewsCard03"
+                        android:layout_marginTop="20dp"
+                        android:text="Current Promotion03 Web Page"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextNews09"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/NewsTitleCard35"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Promotion03 Web Page URL"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/NewsTitleCard36"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextNews09"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: http://www.mobiledatabase.tk/page.html"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/WebPage03Button"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/NewsTitleCard36"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
 
         </RelativeLayout>
     </ScrollView>

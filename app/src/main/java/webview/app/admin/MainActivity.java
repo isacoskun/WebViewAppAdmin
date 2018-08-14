@@ -36,16 +36,20 @@ public class MainActivity extends AppCompatActivity {
 
     DatabaseReference mDatabase,mDatabase2,mDatabase3;
     ImageView AppLogo,SplashLogoCard;
-    RelativeLayout Rel_Splash_Menu,CardView01,CardView02,CardView03,CardView04,CardView05,CardView06,CardView07,CardView08,Rel_WebPage_Menu,Rel_News_Menu;
+    RelativeLayout Rel_Splash_Menu,CardView01,CardView02,CardView03,CardView04,CardView05,CardView06,CardView07,CardView08,
+            Rel_WebPage_Menu,Rel_News_Menu,Rel_Navigation_Menu;
 
-    TextView TitleSplashCard,TitleNewsCard01;
-    EditText EditTextSplash01,EditTextSplash02,EditTextWebPage01,EditTextNews01,EditTextNews02;
-    FloatingActionButton SplashLogoButton,SplashLogoButton02,SplashBackButton,WebPageBackButton,WebPageButton,NewsBackButton,IntroImage01Button,IntroTitle01Button;
+    TextView TitleSplashCard,TitleNewsCard01,TitleNewsCard02,TitleNewsCard03;
+    EditText EditTextSplash01,EditTextSplash02,EditTextWebPage01,EditTextNews01,EditTextNews02,EditTextNews03,EditTextNews04,EditTextNews05,
+            EditTextNews06,EditTextNews07,EditTextNews08,EditTextNews09;
+    FloatingActionButton SplashLogoButton,SplashLogoButton02,SplashBackButton,WebPageBackButton,WebPageButton,NewsBackButton,
+            IntroImage01Button,IntroTitle01Button,WebPage01Button,IntroImage02Button,IntroTitle02Button,WebPage02Button,
+            IntroImage03Button,IntroTitle03Button,WebPage03Button,NavigationBackButton;
 
-    WebView WebPageCard;
-    String WebPageMenuUrl;
+    WebView WebPageCard,WebPageNewsCard01,WebPageNewsCard02,WebPageNewsCard03;
+    String WebPageMenuUrl,WebPageNewsCard01URL,WebPageNewsCard02URL,WebPageNewsCard03URL;
 
-    KenBurnsView IntroImage01;
+    KenBurnsView IntroImage01,IntroImage02,IntroImage03;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
         SplashLogoCard = (ImageView)findViewById(R.id.SplashLogoCard);
 
         IntroImage01 = (KenBurnsView)findViewById(R.id.IntroImage01);
+        IntroImage02 = (KenBurnsView)findViewById(R.id.IntroImage02);
+        IntroImage03 = (KenBurnsView)findViewById(R.id.IntroImage03);
 
         CardView01 = (RelativeLayout)findViewById(R.id.CardView01);
         CardView02 = (RelativeLayout)findViewById(R.id.CardView02);
@@ -74,10 +80,13 @@ public class MainActivity extends AppCompatActivity {
         Rel_Splash_Menu  = (RelativeLayout)findViewById(R.id.Rel_Splash_Menu);
         Rel_WebPage_Menu  = (RelativeLayout)findViewById(R.id.Rel_WebPage_Menu);
         Rel_News_Menu  = (RelativeLayout)findViewById(R.id.Rel_News_Menu);
+        Rel_Navigation_Menu  = (RelativeLayout)findViewById(R.id.Rel_Navigation_Menu);
 
 
         TitleSplashCard = (TextView)findViewById(R.id.TitleSplashCard);
         TitleNewsCard01 = (TextView)findViewById(R.id.TitleNewsCard01);
+        TitleNewsCard02 = (TextView)findViewById(R.id.TitleNewsCard02);
+        TitleNewsCard03 = (TextView)findViewById(R.id.TitleNewsCard03);
 
 
         EditTextSplash01 = (EditText)findViewById(R.id.EditTextSplash01);
@@ -85,11 +94,19 @@ public class MainActivity extends AppCompatActivity {
         EditTextWebPage01 = (EditText)findViewById(R.id.EditTextWebPage01);
         EditTextNews01 = (EditText)findViewById(R.id.EditTextNews01);
         EditTextNews02 = (EditText)findViewById(R.id.EditTextNews02);
+        EditTextNews03 = (EditText)findViewById(R.id.EditTextNews03);
+        EditTextNews04 = (EditText)findViewById(R.id.EditTextNews04);
+        EditTextNews05 = (EditText)findViewById(R.id.EditTextNews05);
+        EditTextNews06 = (EditText)findViewById(R.id.EditTextNews06);
+        EditTextNews07 = (EditText)findViewById(R.id.EditTextNews07);
+        EditTextNews08 = (EditText)findViewById(R.id.EditTextNews08);
+        EditTextNews09 = (EditText)findViewById(R.id.EditTextNews09);
 
 
         SplashBackButton = (FloatingActionButton)findViewById(R.id.SplashBackButton);
         WebPageBackButton = (FloatingActionButton)findViewById(R.id.WebPageBackButton);
         NewsBackButton = (FloatingActionButton)findViewById(R.id.NewsBackButton);
+        NavigationBackButton = (FloatingActionButton)findViewById(R.id.NavigationBackButton);
 
 
         SplashLogoButton02 = (FloatingActionButton)findViewById(R.id.SplashLogoButton02);
@@ -97,16 +114,18 @@ public class MainActivity extends AppCompatActivity {
         WebPageButton = (FloatingActionButton)findViewById(R.id.WebPageButton);
         IntroImage01Button = (FloatingActionButton)findViewById(R.id.IntroImage01Button);
         IntroTitle01Button = (FloatingActionButton)findViewById(R.id.IntroTitle01Button);
+        WebPage01Button = (FloatingActionButton)findViewById(R.id.WebPage01Button);
+        IntroImage02Button = (FloatingActionButton)findViewById(R.id.IntroImage02Button);
+        IntroTitle02Button = (FloatingActionButton)findViewById(R.id.IntroTitle02Button);
+        WebPage02Button = (FloatingActionButton)findViewById(R.id.WebPage02Button);
+        IntroImage03Button = (FloatingActionButton)findViewById(R.id.IntroImage03Button);
+        IntroTitle03Button = (FloatingActionButton)findViewById(R.id.IntroTitle03Button);
+        WebPage03Button = (FloatingActionButton)findViewById(R.id.WebPage03Button);
 
         WebPageCard = (WebView)findViewById(R.id.WebPageCard);
-
-        CardView04.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
+        WebPageNewsCard01 = (WebView)findViewById(R.id.WebPageNewsCard01);
+        WebPageNewsCard02 = (WebView)findViewById(R.id.WebPageNewsCard02);
+        WebPageNewsCard03 = (WebView)findViewById(R.id.WebPageNewsCard03);
 
         CardView05.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
         SplashScreenMenu();
         WebPageMenu();
         NewsMenu();
+        NavigationMenu();
 
     }
 
@@ -262,6 +282,7 @@ public class MainActivity extends AppCompatActivity {
                 Rel_WebPage_Menu.setVisibility(View.GONE);
 
                 WebPageCard.loadUrl(WebPageMenuUrl);
+
             }
         });
 
@@ -299,6 +320,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     private void NewsMenu() {
 
         CardView03.setOnClickListener(new View.OnClickListener() {
@@ -318,6 +340,11 @@ public class MainActivity extends AppCompatActivity {
                 final ViewGroup transitionsContainer = (ViewGroup)findViewById(R.id.Rel_News_Menu);
                 TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.RIGHT));
                 Rel_News_Menu.setVisibility(View.GONE);
+
+                WebPageNewsCard01.loadUrl(WebPageNewsCard01URL);
+                WebPageNewsCard02.loadUrl(WebPageNewsCard02URL);
+                WebPageNewsCard03.loadUrl(WebPageNewsCard03URL);
+
             }
         });
 
@@ -341,9 +368,9 @@ public class MainActivity extends AppCompatActivity {
         mDatabase3.child("IntroImageTitle01").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String url = dataSnapshot.getValue(String.class);
+                String string = dataSnapshot.getValue(String.class);
 
-                TitleNewsCard01.setText(url);
+                TitleNewsCard01.setText(string);
             }
 
             @Override
@@ -369,6 +396,234 @@ public class MainActivity extends AppCompatActivity {
                 mDatabase3.child("IntroImageTitle01").setValue(string);
             }
         });
+
+        WebPageNewsCard01 .getSettings().setJavaScriptEnabled(true);
+        WebPageNewsCard01 .setFocusable(true);
+        WebPageNewsCard01 .setFocusableInTouchMode(true);
+        WebPageNewsCard01 .getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        WebPageNewsCard01 .getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        WebPageNewsCard01 .getSettings().setDomStorageEnabled(true);
+        WebPageNewsCard01 .getSettings().setDatabaseEnabled(true);
+        WebPageNewsCard01 .getSettings().setAppCacheEnabled(true);
+        WebPageNewsCard01 .setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        WebPageNewsCard01 .setWebViewClient(new WebViewClient());
+
+        mDatabase3.child("PromotionWebPageURL01").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                WebPageNewsCard01URL = dataSnapshot.getValue(String.class);
+
+                WebPageNewsCard01.loadUrl(WebPageNewsCard01URL);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        WebPage01Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextNews03.getText().toString();
+                mDatabase3.child("PromotionWebPageURL01").setValue(string);
+            }
+        });
+
+        mDatabase3.child("IntroImage02").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String url = dataSnapshot.getValue(String.class);
+
+                Picasso.get()
+                        .load(url)
+                        .resize(1080,400)
+                        .into(IntroImage02);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        IntroImage02Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextNews04.getText().toString();
+                mDatabase3.child("IntroImage02").setValue(string);
+            }
+        });
+
+        mDatabase3.child("IntroImageTitle02").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String string = dataSnapshot.getValue(String.class);
+
+                TitleNewsCard02.setText(string);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        IntroTitle02Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextNews05.getText().toString();
+                mDatabase3.child("IntroImageTitle02").setValue(string);
+            }
+        });
+
+        WebPageNewsCard02 .getSettings().setJavaScriptEnabled(true);
+        WebPageNewsCard02 .setFocusable(true);
+        WebPageNewsCard02 .setFocusableInTouchMode(true);
+        WebPageNewsCard02 .getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        WebPageNewsCard02 .getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        WebPageNewsCard02 .getSettings().setDomStorageEnabled(true);
+        WebPageNewsCard02 .getSettings().setDatabaseEnabled(true);
+        WebPageNewsCard02 .getSettings().setAppCacheEnabled(true);
+        WebPageNewsCard02 .setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        WebPageNewsCard02 .setWebViewClient(new WebViewClient());
+
+        mDatabase3.child("PromotionWebPageURL02").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                WebPageNewsCard02URL = dataSnapshot.getValue(String.class);
+
+                WebPageNewsCard02.loadUrl(WebPageNewsCard02URL);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        WebPage02Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextNews06.getText().toString();
+                mDatabase3.child("PromotionWebPageURL02").setValue(string);
+            }
+        });
+
+        mDatabase3.child("IntroImage03").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String url = dataSnapshot.getValue(String.class);
+
+                Picasso.get()
+                        .load(url)
+                        .resize(1080,400)
+                        .into(IntroImage03);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        IntroImage03Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextNews07.getText().toString();
+                mDatabase3.child("IntroImage03").setValue(string);
+            }
+        });
+
+        mDatabase3.child("IntroImageTitle03").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String string = dataSnapshot.getValue(String.class);
+
+                TitleNewsCard03.setText(string);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        IntroTitle03Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextNews08.getText().toString();
+                mDatabase3.child("IntroImageTitle03").setValue(string);
+            }
+        });
+
+        WebPageNewsCard03 .getSettings().setJavaScriptEnabled(true);
+        WebPageNewsCard03 .setFocusable(true);
+        WebPageNewsCard03 .setFocusableInTouchMode(true);
+        WebPageNewsCard03 .getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        WebPageNewsCard03 .getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        WebPageNewsCard03 .getSettings().setDomStorageEnabled(true);
+        WebPageNewsCard03 .getSettings().setDatabaseEnabled(true);
+        WebPageNewsCard03 .getSettings().setAppCacheEnabled(true);
+        WebPageNewsCard03 .setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        WebPageNewsCard03 .setWebViewClient(new WebViewClient());
+
+        mDatabase3.child("PromotionWebPageURL03").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                WebPageNewsCard03URL = dataSnapshot.getValue(String.class);
+
+                WebPageNewsCard03.loadUrl(WebPageNewsCard03URL);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        WebPage03Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextNews09.getText().toString();
+                mDatabase3.child("PromotionWebPageURL03").setValue(string);
+            }
+        });
+
+    }
+
+    private void NavigationMenu() {
+
+        CardView04.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final ViewGroup transitionsContainer = (ViewGroup)findViewById(R.id.Rel_Navigation_Menu);
+                TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.LEFT));
+                Rel_Navigation_Menu.setVisibility(View.VISIBLE);
+            }
+        });
+
+        NavigationBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final ViewGroup transitionsContainer = (ViewGroup)findViewById(R.id.Rel_Navigation_Menu);
+                TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.LEFT));
+                Rel_Navigation_Menu.setVisibility(View.GONE);
+            }
+        });
+
+
+
+
     }
 
 }
