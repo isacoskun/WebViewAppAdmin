@@ -34,19 +34,28 @@ import com.transitionseverywhere.TransitionManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    DatabaseReference mDatabase,mDatabase2,mDatabase3;
-    ImageView AppLogo,SplashLogoCard;
+    DatabaseReference mDatabase,mDatabase2,mDatabase3,mDatabase4,mDatabase5,mDatabase6,mDatabase7;
+    ImageView AppLogo,SplashLogoCard,NavigationImage,AboutImage,ContactImage;
     RelativeLayout Rel_Splash_Menu,CardView01,CardView02,CardView03,CardView04,CardView05,CardView06,CardView07,CardView08,
-            Rel_WebPage_Menu,Rel_News_Menu,Rel_Navigation_Menu;
+            Rel_WebPage_Menu,Rel_News_Menu,Rel_Navigation_Menu,Rel_About_Us,Rel_Contact_Us,Rel_Follow_Us;
 
-    TextView TitleSplashCard,TitleNewsCard01,TitleNewsCard02,TitleNewsCard03;
+    TextView TitleSplashCard,TitleNews01,TitleNews02,TitleNews03,AboutTitle,AboutText,ContactAddress,ContactEmail,ContactPhone,
+            FollowFacebookPage,FollowFacebookUser,FollowInstagram,FollowTwitter,FollowLinkedin,FollowYoutube;
+
     EditText EditTextSplash01,EditTextSplash02,EditTextWebPage01,EditTextNews01,EditTextNews02,EditTextNews03,EditTextNews04,EditTextNews05,
-            EditTextNews06,EditTextNews07,EditTextNews08,EditTextNews09;
+            EditTextNews06,EditTextNews07,EditTextNews08,EditTextNews09,EditTextNavigation,EditTextAbout01,EditTextAbout02,EditTextAbout03,
+            EditTextContact01,EditTextContact02,EditTextContact03,EditTextContact04,EditTextFollow01,EditTextFollow02,EditTextFollow03,
+            EditTextFollow04,EditTextFollow05,EditTextFollow06;
+
     FloatingActionButton SplashLogoButton,SplashLogoButton02,SplashBackButton,WebPageBackButton,WebPageButton,NewsBackButton,
             IntroImage01Button,IntroTitle01Button,WebPage01Button,IntroImage02Button,IntroTitle02Button,WebPage02Button,
-            IntroImage03Button,IntroTitle03Button,WebPage03Button,NavigationBackButton;
+            IntroImage03Button,IntroTitle03Button,WebPage03Button,NavigationBackButton,NavigationImageButton,AboutBackButton,
+            AboutImageButton,AboutTitleButton,AboutTextButton,ContactBackButton,ContactImageButton,ContactAddressButton,ContactEmailButton,
+            ContactPhoneButton,FollowBackButton,FollowFBPageButton,FollowFBUserButton,FollowInstagramButton,FollowTwitterButton,
+            FollowLinkedinButton,FollowYoutubeButton;
 
     WebView WebPageCard,WebPageNewsCard01,WebPageNewsCard02,WebPageNewsCard03;
+
     String WebPageMenuUrl,WebPageNewsCard01URL,WebPageNewsCard02URL,WebPageNewsCard03URL;
 
     KenBurnsView IntroImage01,IntroImage02,IntroImage03;
@@ -57,13 +66,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("My_Splash_Screen");
+        mDatabase  = FirebaseDatabase.getInstance().getReference("My_Splash_Screen");
         mDatabase2 = FirebaseDatabase.getInstance().getReference("WebPage");
         mDatabase3 = FirebaseDatabase.getInstance().getReference("PromotionPage");
+        mDatabase4 = FirebaseDatabase.getInstance().getReference("Navigation_Menu");
+        mDatabase5 = FirebaseDatabase.getInstance().getReference("About_Us");
+        mDatabase6 = FirebaseDatabase.getInstance().getReference("Contact_Us");
+        mDatabase7 = FirebaseDatabase.getInstance().getReference("Follow_Us");
 
 
         AppLogo = (ImageView)findViewById(R.id.AppLogo);
         SplashLogoCard = (ImageView)findViewById(R.id.SplashLogoCard);
+        NavigationImage = (ImageView)findViewById(R.id.NavigationImage);
+        AboutImage = (ImageView)findViewById(R.id.AboutImage);
+        ContactImage = (ImageView)findViewById(R.id.ContactImage);
 
         IntroImage01 = (KenBurnsView)findViewById(R.id.IntroImage01);
         IntroImage02 = (KenBurnsView)findViewById(R.id.IntroImage02);
@@ -81,12 +97,26 @@ public class MainActivity extends AppCompatActivity {
         Rel_WebPage_Menu  = (RelativeLayout)findViewById(R.id.Rel_WebPage_Menu);
         Rel_News_Menu  = (RelativeLayout)findViewById(R.id.Rel_News_Menu);
         Rel_Navigation_Menu  = (RelativeLayout)findViewById(R.id.Rel_Navigation_Menu);
+        Rel_About_Us  = (RelativeLayout)findViewById(R.id.Rel_About_Us);
+        Rel_Contact_Us  = (RelativeLayout)findViewById(R.id.Rel_Contact_Us);
+        Rel_Follow_Us  = (RelativeLayout)findViewById(R.id.Rel_Follow_Us);
 
 
         TitleSplashCard = (TextView)findViewById(R.id.TitleSplashCard);
-        TitleNewsCard01 = (TextView)findViewById(R.id.TitleNewsCard01);
-        TitleNewsCard02 = (TextView)findViewById(R.id.TitleNewsCard02);
-        TitleNewsCard03 = (TextView)findViewById(R.id.TitleNewsCard03);
+        TitleNews01 = (TextView)findViewById(R.id.TitleNewsCard01);
+        TitleNews02 = (TextView)findViewById(R.id.TitleNewsCard02);
+        TitleNews03 = (TextView)findViewById(R.id.TitleNewsCard03);
+        AboutTitle = (TextView)findViewById(R.id.AboutTitle);
+        AboutText = (TextView)findViewById(R.id.AboutText);
+        ContactAddress = (TextView)findViewById(R.id.ContactAddress);
+        ContactEmail = (TextView)findViewById(R.id.ContactEmail);
+        ContactPhone = (TextView)findViewById(R.id.ContactPhone);
+        FollowFacebookPage = (TextView)findViewById(R.id.FollowFacebookPage);
+        FollowFacebookUser = (TextView)findViewById(R.id.FollowFacebookUser);
+        FollowInstagram = (TextView)findViewById(R.id.FollowInstagram);
+        FollowTwitter = (TextView)findViewById(R.id.FollowTwitter);
+        FollowLinkedin = (TextView)findViewById(R.id.FollowLinkedin);
+        FollowYoutube = (TextView)findViewById(R.id.FollowYoutube);
 
 
         EditTextSplash01 = (EditText)findViewById(R.id.EditTextSplash01);
@@ -101,12 +131,30 @@ public class MainActivity extends AppCompatActivity {
         EditTextNews07 = (EditText)findViewById(R.id.EditTextNews07);
         EditTextNews08 = (EditText)findViewById(R.id.EditTextNews08);
         EditTextNews09 = (EditText)findViewById(R.id.EditTextNews09);
+        EditTextNavigation = (EditText)findViewById(R.id.EditTextNavigation);
+        EditTextAbout01 = (EditText)findViewById(R.id.EditTextAbout01);
+        EditTextAbout02 = (EditText)findViewById(R.id.EditTextAbout02);
+        EditTextAbout03 = (EditText)findViewById(R.id.EditTextAbout03);
+        EditTextContact01 = (EditText)findViewById(R.id.EditTextContact01);
+        EditTextContact02 = (EditText)findViewById(R.id.EditTextContact02);
+        EditTextContact03 = (EditText)findViewById(R.id.EditTextContact03);
+        EditTextContact04 = (EditText)findViewById(R.id.EditTextContact04);
+        EditTextFollow01 = (EditText)findViewById(R.id.EditTextFollow01);
+        EditTextFollow02 = (EditText)findViewById(R.id.EditTextFollow02);
+        EditTextFollow03 = (EditText)findViewById(R.id.EditTextFollow03);
+        EditTextFollow04 = (EditText)findViewById(R.id.EditTextFollow04);
+        EditTextFollow05 = (EditText)findViewById(R.id.EditTextFollow05);
+        EditTextFollow06 = (EditText)findViewById(R.id.EditTextFollow06);
+
 
 
         SplashBackButton = (FloatingActionButton)findViewById(R.id.SplashBackButton);
         WebPageBackButton = (FloatingActionButton)findViewById(R.id.WebPageBackButton);
         NewsBackButton = (FloatingActionButton)findViewById(R.id.NewsBackButton);
         NavigationBackButton = (FloatingActionButton)findViewById(R.id.NavigationBackButton);
+        AboutBackButton = (FloatingActionButton)findViewById(R.id.AboutBackButton);
+        ContactBackButton = (FloatingActionButton)findViewById(R.id.ContactBackButton);
+        FollowBackButton = (FloatingActionButton)findViewById(R.id.FollowBackButton);
 
 
         SplashLogoButton02 = (FloatingActionButton)findViewById(R.id.SplashLogoButton02);
@@ -121,35 +169,26 @@ public class MainActivity extends AppCompatActivity {
         IntroImage03Button = (FloatingActionButton)findViewById(R.id.IntroImage03Button);
         IntroTitle03Button = (FloatingActionButton)findViewById(R.id.IntroTitle03Button);
         WebPage03Button = (FloatingActionButton)findViewById(R.id.WebPage03Button);
+        NavigationImageButton = (FloatingActionButton)findViewById(R.id.NavigationImageButton);
+        AboutImageButton = (FloatingActionButton)findViewById(R.id.AboutImageButton);
+        AboutTitleButton = (FloatingActionButton)findViewById(R.id.AboutTitleButton);
+        AboutTextButton = (FloatingActionButton)findViewById(R.id.AboutTextButton);
+        ContactImageButton = (FloatingActionButton)findViewById(R.id.ContactImageButton);
+        ContactAddressButton = (FloatingActionButton)findViewById(R.id.ContactAddressButton);
+        ContactEmailButton = (FloatingActionButton)findViewById(R.id.ContactEmailButton);
+        ContactPhoneButton = (FloatingActionButton)findViewById(R.id.ContactPhoneButton);
+        FollowFBPageButton = (FloatingActionButton)findViewById(R.id.FollowFBPageButton);
+        FollowFBUserButton = (FloatingActionButton)findViewById(R.id.FollowFBUserButton);
+        FollowInstagramButton = (FloatingActionButton)findViewById(R.id.FollowInstagramButton);
+        FollowTwitterButton = (FloatingActionButton)findViewById(R.id.FollowTwitterButton);
+        FollowLinkedinButton = (FloatingActionButton)findViewById(R.id.FollowLinkedinButton);
+        FollowYoutubeButton = (FloatingActionButton)findViewById(R.id.FollowYoutubeButton);
+
 
         WebPageCard = (WebView)findViewById(R.id.WebPageCard);
         WebPageNewsCard01 = (WebView)findViewById(R.id.WebPageNewsCard01);
         WebPageNewsCard02 = (WebView)findViewById(R.id.WebPageNewsCard02);
         WebPageNewsCard03 = (WebView)findViewById(R.id.WebPageNewsCard03);
-
-        CardView05.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
-
-        CardView06.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
-
-        CardView07.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
 
         CardView08.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,8 +203,166 @@ public class MainActivity extends AppCompatActivity {
         WebPageMenu();
         NewsMenu();
         NavigationMenu();
-
+        AboutUsMenu();
+        ContactUsMenu();
+        FollowUsMenu();
     }
+
+    private void FollowUsMenu() {
+
+        CardView07.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final ViewGroup transitionsContainer = (ViewGroup)findViewById(R.id.Rel_Follow_Us);
+                TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.RIGHT));
+                Rel_Follow_Us.setVisibility(View.VISIBLE);
+            }
+        });
+
+        FollowBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final ViewGroup transitionsContainer = (ViewGroup)findViewById(R.id.Rel_Follow_Us);
+                TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.RIGHT));
+                Rel_Follow_Us.setVisibility(View.GONE);
+            }
+        });
+
+        mDatabase7.child("FacebookPageID").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String ID = dataSnapshot.getValue(String.class);
+
+                FollowFacebookPage.setText(ID);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+
+        FollowFBPageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextFollow01.getText().toString();
+                mDatabase7.child("FacebookPageID").setValue(string);
+            }
+        });
+
+        mDatabase7.child("FacebookUserID").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String ID = dataSnapshot.getValue(String.class);
+
+                FollowFacebookUser.setText(ID);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+
+        FollowFBUserButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextFollow02.getText().toString();
+                mDatabase7.child("FacebookUserID").setValue(string);
+            }
+        });
+
+        mDatabase7.child("InstagramUserID").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String ID = dataSnapshot.getValue(String.class);
+
+                FollowInstagram.setText(ID);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+
+        FollowInstagramButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextFollow03.getText().toString();
+                mDatabase7.child("InstagramUserID").setValue(string);
+            }
+        });
+
+        mDatabase7.child("TwitterUserID").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String ID = dataSnapshot.getValue(String.class);
+
+                FollowTwitter.setText(ID);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+
+        FollowTwitterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextFollow04.getText().toString();
+                mDatabase7.child("TwitterUserID").setValue(string);
+            }
+        });
+
+        mDatabase7.child("LinkedinUserID").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String ID = dataSnapshot.getValue(String.class);
+
+                FollowLinkedin.setText(ID);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+
+        FollowLinkedinButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextFollow05.getText().toString();
+                mDatabase7.child("LinkedinUserID").setValue(string);
+            }
+        });
+
+        mDatabase7.child("YouTubeChannelID").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String ID = dataSnapshot.getValue(String.class);
+
+                FollowYoutube.setText(ID);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+
+        FollowYoutubeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextFollow06.getText().toString();
+                mDatabase7.child("YouTubeChannelID").setValue(string);
+            }
+        });
+    }
+
 
     private void MainMenuData() {
 
@@ -370,7 +567,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String string = dataSnapshot.getValue(String.class);
 
-                TitleNewsCard01.setText(string);
+                TitleNews01.setText(string);
             }
 
             @Override
@@ -462,7 +659,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String string = dataSnapshot.getValue(String.class);
 
-                TitleNewsCard02.setText(string);
+                TitleNews02.setText(string);
             }
 
             @Override
@@ -545,7 +742,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String string = dataSnapshot.getValue(String.class);
 
-                TitleNewsCard03.setText(string);
+                TitleNews03.setText(string);
             }
 
             @Override
@@ -621,9 +818,245 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mDatabase4.child("Nav_MenuBannerBG").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String url = dataSnapshot.getValue(String.class);
 
+                Picasso.get()
+                        .load(url)
+                        .resize(600,300)
+                        .into(NavigationImage);
+            }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+        NavigationImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextNavigation.getText().toString();
+                mDatabase4.child("Nav_MenuBannerBG").setValue(string);
+            }
+        });
     }
+
+    private void AboutUsMenu() {
+
+        CardView05.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final ViewGroup transitionsContainer = (ViewGroup)findViewById(R.id.Rel_About_Us);
+                TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.TOP));
+                Rel_About_Us.setVisibility(View.VISIBLE);
+            }
+        });
+
+        AboutBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final ViewGroup transitionsContainer = (ViewGroup)findViewById(R.id.Rel_About_Us);
+                TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.TOP));
+                Rel_About_Us.setVisibility(View.GONE);
+            }
+        });
+
+        mDatabase5.child("AboutImage").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String url = dataSnapshot.getValue(String.class);
+
+                Picasso.get()
+                        .load(url)
+                        .resize(1080,400)
+                        .into(AboutImage);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        AboutImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextAbout01.getText().toString();
+                mDatabase5.child("AboutImage").setValue(string);
+            }
+        });
+
+        mDatabase5.child("AboutTitle").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String string = dataSnapshot.getValue(String.class);
+
+                AboutTitle.setText(string);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        AboutTitleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextAbout02.getText().toString();
+                mDatabase5.child("AboutTitle").setValue(string);
+            }
+        });
+
+        mDatabase5.child("AboutText").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String string = dataSnapshot.getValue(String.class);
+
+                AboutText.setText(string);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        AboutTextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextAbout03.getText().toString();
+                mDatabase5.child("AboutText").setValue(string);
+            }
+        });
+    }
+
+    private void ContactUsMenu() {
+
+        CardView06.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final ViewGroup transitionsContainer = (ViewGroup)findViewById(R.id.Rel_Contact_Us);
+                TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.BOTTOM));
+                Rel_Contact_Us.setVisibility(View.VISIBLE);
+            }
+        });
+
+        ContactBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final ViewGroup transitionsContainer = (ViewGroup)findViewById(R.id.Rel_Contact_Us);
+                TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.BOTTOM));
+                Rel_Contact_Us.setVisibility(View.GONE);
+            }
+        });
+
+        mDatabase6.child("ContactImage").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String url = dataSnapshot.getValue(String.class);
+
+                Picasso.get()
+                        .load(url)
+                        .resize(1080,400)
+                        .into(ContactImage);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        ContactImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextContact01.getText().toString();
+                mDatabase6.child("ContactImage").setValue(string);
+            }
+        });
+
+        mDatabase6.child("ContactAdress").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String string = dataSnapshot.getValue(String.class);
+
+                ContactAddress.setText(string);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        ContactAddressButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextContact02.getText().toString();
+                mDatabase6.child("ContactAdress").setValue(string);
+            }
+        });
+
+        mDatabase6.child("ContactEmail").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String string = dataSnapshot.getValue(String.class);
+
+                ContactEmail.setText(string);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        ContactEmailButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextContact03.getText().toString();
+                mDatabase6.child("ContactEmail").setValue(string);
+            }
+        });
+
+        mDatabase6.child("ContactPhone").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String string = dataSnapshot.getValue(String.class);
+
+                ContactPhone.setText(string);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        ContactPhoneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String string = (String) EditTextContact04.getText().toString();
+                mDatabase6.child("ContactPhone").setValue(string);
+            }
+        });
+    }
+
 
 }

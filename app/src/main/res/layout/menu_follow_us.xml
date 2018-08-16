@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/Rel_Follow_Us"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/cardview_dark_background"
+    android:visibility="invisible">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/AppBarLayFollow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/FollowBackButton"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_back"
+                        app:backgroundTint="@color/maincolor"
+                        app:fabSize="mini"
+                        app:rippleColor="@android:color/black" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:text="Follow Us Page"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="22dp" />
+
+                </android.support.v7.widget.Toolbar>
+            </android.support.design.widget.AppBarLayout>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/CardViewFollow01"
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/AppBarLayFollow"
+                app:cardBackgroundColor="@color/maincolor"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/FollowTitle01"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="3dp"
+                        android:text="Edit Follow Us Menu (Follow Facebook Page)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowTitle01"
+                        android:layout_marginTop="20dp"
+                        android:text="Add facebook page ID. It's not a URL"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowTitleCard01"
+                        android:text="(If you have a facebook page, just add ID information)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/FollowFacebookPage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/FollowTitleCard02"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg3"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowFacebookPage"
+                        android:layout_marginTop="10dp"
+                        android:text="Current Facebook Page ID"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextFollow01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/FollowTitleCard03"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Facebook Page ID"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextFollow01"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: AndroidOfficial"
+                        android:textAlignment="textStart"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/FollowFBPageButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/FollowTitleCard04"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                    <RelativeLayout
+                        android:id="@+id/LineFacebook"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/FollowFBPageButton"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg">
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/FollowTitle02"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/cardview_bg"
+                        android:layout_below="@+id/LineFacebook"
+                        android:padding="3dp"
+                        android:text="Edit Follow Us Menu (Follow Facebook User)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowTitle02"
+                        android:layout_marginTop="20dp"
+                        android:text="Add facebook account ID. It's not a URL"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard06"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowTitleCard05"
+                        android:text="(If you have a account page, just add ID information)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/FollowFacebookUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/FollowTitleCard06"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg3"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard07"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowFacebookUser"
+                        android:layout_marginTop="10dp"
+                        android:text="Current Facebook Account ID"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextFollow02"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/FollowTitleCard07"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Facebook Account ID"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard08"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextFollow02"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: AndroidOfficial"
+                        android:textAlignment="textStart"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/FollowFBUserButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/FollowTitleCard08"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/CardViewFollow02"
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/CardViewFollow01"
+                app:cardBackgroundColor="@color/maincolor"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/FollowTitle03"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="3dp"
+                        android:text="Edit Follow Us Menu (Follow Instagram Page)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard09"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowTitle03"
+                        android:layout_marginTop="20dp"
+                        android:text="Add Instagram user ID. It's not a URL"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowTitleCard09"
+                        android:text="(If you haven't a instagram account, you should add a ( - ), do not leave it empty)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/FollowInstagram"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/FollowTitleCard10"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg3"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowInstagram"
+                        android:layout_marginTop="10dp"
+                        android:text="Current Instagram User ID"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextFollow03"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/FollowTitleCard11"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Instagram User ID"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextFollow03"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: ixastudio or you haven't a account Example: -"
+                        android:textAlignment="textStart"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/FollowInstagramButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/FollowTitleCard12"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/CardViewFollow03"
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/CardViewFollow02"
+                app:cardBackgroundColor="@color/maincolor"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/FollowTitle04"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="3dp"
+                        android:text="Edit Follow Us Menu (Follow Twitter Page)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowTitle04"
+                        android:layout_marginTop="20dp"
+                        android:text="Add Twitter user ID. It's not a URL"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowTitleCard13"
+                        android:text="(If you haven't a Twitter account, you should add a ( - ), do not leave it empty)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTwitter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/FollowTitleCard14"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg3"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowTwitter"
+                        android:layout_marginTop="10dp"
+                        android:text="Current Twitter User ID"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextFollow04"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/FollowTitleCard15"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Twitter User ID"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextFollow04"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: ixastudio or you haven't a account Example: -"
+                        android:textAlignment="textStart"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/FollowTwitterButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/FollowTitleCard16"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/CardViewFollow04"
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/CardViewFollow03"
+                app:cardBackgroundColor="@color/maincolor"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/FollowTitle05"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="3dp"
+                        android:text="Edit Follow Us Menu (Follow Linkedin Page)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowTitle05"
+                        android:layout_marginTop="20dp"
+                        android:text="Add Linkedin user ID. It's not a URL"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowTitleCard17"
+                        android:text="(If you haven't a Linkedin account, you should add a ( - ), do not leave it empty)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/FollowLinkedin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/FollowTitleCard18"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg3"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowLinkedin"
+                        android:layout_marginTop="10dp"
+                        android:text="Current Linkedin User ID"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextFollow05"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/FollowTitleCard19"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Linkedin User ID"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextFollow05"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: ixastudio or you haven't a account Example: -"
+                        android:textAlignment="textStart"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/FollowLinkedinButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/FollowTitleCard20"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/CardViewFollow05"
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_below="@+id/CardViewFollow04"
+                app:cardBackgroundColor="@color/maincolor"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/FollowTitle06"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="3dp"
+                        android:text="Edit Follow Us Menu (Follow YouTube Page)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowTitle06"
+                        android:layout_marginTop="20dp"
+                        android:text="Add Youtube channel URL. It's not ID"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowTitleCard21"
+                        android:text="(If you haven't a Youtube channel, you should add Youtube home page URL, do not leave it empty)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/FollowYoutube"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/FollowTitleCard22"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg3"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/FollowYoutube"
+                        android:layout_marginTop="10dp"
+                        android:text="Current Youtube Channel"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextFollow06"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/FollowTitleCard23"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Youtube Channel URL"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/FollowTitleCard24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextFollow06"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: https://www.youtube.com/channel/UC9M7-jzdU8CVrQo1JwmIdWA or you haven't a channel Example: https://www.youtube.com"
+                        android:textAlignment="textStart"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/FollowYoutubeButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/FollowTitleCard24"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

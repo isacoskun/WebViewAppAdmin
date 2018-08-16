@@ -190,7 +190,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/SplashLogoTitleCard06"
                         android:layout_marginTop="20dp"
-                        android:background="@drawable/cardview_bg"
+                        android:background="@drawable/cardview_bg3"
                         android:fontFamily="@font/montserrat_alternates"
                         android:padding="10dp"
                         android:textColor="@android:color/black"
@@ -212,8 +212,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_below="@+id/SplashLogoTitleCard05"
-                        android:text="(The recommended number of characters is 24)"
-                        android:textAlignment="center"
+                        android:text="(The maximum number of characters recommended is 24)"
+                        android:textAlignment="textEnd"
                         android:textSize="13sp" />
 
                     <TextView

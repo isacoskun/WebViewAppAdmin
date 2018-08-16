@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -533,6 +534,10 @@
     <include layout="@layout/menu_splash_screen" />
     <include layout="@layout/menu_web_page" />
     <include layout="@layout/menu_news" />
+    <include layout="@layout/menu_navigation" />
+    <include layout="@layout/menu_about_us" />
+    <include layout="@layout/menu_contact_us" />
+    <include layout="@layout/menu_follow_us" />
 
 
 </RelativeLayout>

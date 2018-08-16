@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/Rel_About_Us"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    android:visibility="invisible">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/AppBarLayAbout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/AboutBackButton"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_back"
+                        app:backgroundTint="@color/maincolor"
+                        app:fabSize="mini"
+                        app:rippleColor="@android:color/black" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:text="About Us Page"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="22dp" />
+
+                </android.support.v7.widget.Toolbar>
+            </android.support.design.widget.AppBarLayout>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/CardViewAbout01"
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/AppBarLayAbout"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/maincolor"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/AboutTitle01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="2dp"
+                        android:text="Edit About Us Menu (About Image)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/AboutTitleCard01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/AboutTitle01"
+                        android:layout_marginTop="20dp"
+                        android:text="Image size: 1080 x 400"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/AboutTitleCard02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/AboutTitleCard01"
+                        android:text="(Add a direct link to your About Us Menu Banner Image URL. Use the recommended image size)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:id="@+id/AboutImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_below="@+id/AboutTitleCard02"
+                        android:layout_marginTop="20dp"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/AboutTitleCard03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/AboutImage"
+                        android:layout_marginTop="20dp"
+                        android:text="Current About Us Banner Image"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextAbout01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/AboutTitleCard03"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add About Us Image URL"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/AboutTitleCard04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextAbout01"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: http://i.hizliresim.com/EDA7zA.png"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/AboutImageButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/AboutTitleCard04"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/CardViewAbout02"
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/CardViewAbout01"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/maincolor"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/AboutTitle02"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="2dp"
+                        android:text="Edit About Us Menu (About Title)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/AboutTitleCard06"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/AboutTitle02"
+                        android:layout_marginTop="20dp"
+                        android:text="Make sure your title is not long"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/AboutTitleCard07"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/AboutTitleCard06"
+                        android:text="(The maximum number of characters recommended is 60)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/AboutTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/AboutTitleCard07"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg3"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/AboutTitleCard08"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/AboutTitle"
+                        android:layout_marginTop="10dp"
+                        android:text="Current About Us Title"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextAbout02"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/AboutTitleCard08"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add About Us Title"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/AboutTitleCard09"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextAbout02"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: iXa Studio"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/AboutTitleButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/AboutTitleCard09"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/CardViewAbout03"
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/CardViewAbout02"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/maincolor"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/AboutTitle03"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="2dp"
+                        android:text="Edit About Us Menu (About Text)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/AboutTitleCard10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/AboutTitle03"
+                        android:layout_marginTop="20dp"
+                        android:text="Pay attention to the writing rules in the text you write"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/AboutTitleCard11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/AboutTitleCard10"
+                        android:text="(Add information about yourself and give information to the user. You can use as many characters as you like)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/AboutText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/AboutTitleCard11"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg3"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/AboutTitleCard12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/AboutText"
+                        android:layout_marginTop="10dp"
+                        android:text="Current About Us Text"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextAbout03"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/AboutTitleCard12"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add About Us Text"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/AboutTitleCard13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextAbout03"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: We are Istanbul based software development, design and digital studio. We produce software for you and meet your needs. We offer the possibility to manage their own projects even for those who do not have software knowledge. We are lightening your whole burden. We work for you, we offer you a quality fits for quality, design and performance. We also give our customers free installation and technical support after the purchase. We came to change this sector. Please remember to follow us from social media to be aware of our products. All our customers are special to us. But our first customers always have a privilege. Stay back from the campaigns. Cheers."
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/AboutTextButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/AboutTitleCard13"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

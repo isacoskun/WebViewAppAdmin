@@ -101,7 +101,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
                         android:layout_below="@+id/NewsTitleCard02"
-                        android:layout_marginTop="20dp" />
+                        android:layout_marginTop="20dp"
+                        android:scaleType="centerCrop" />
 
                     <TextView
                         android:id="@+id/NewsTitleCard03"
@@ -131,8 +132,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/EditTextNews01"
                         android:layout_marginTop="5dp"
-                        android:text="Example: https://www.n4l.co.nz/wp-content/uploads/2016/01/Google-Search_2016-1080x400.jpg"
-                        android:textAlignment="center"
+                        android:text="Example: http://i.hizliresim.com/k682jD.jpg"
                         android:textSize="12sp" />
 
                     <android.support.design.widget.FloatingActionButton
@@ -194,7 +194,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/NewsTitleCard06"
                         android:layout_marginTop="20dp"
-                        android:background="@drawable/cardview_bg"
+                        android:background="@drawable/cardview_bg3"
                         android:fontFamily="@font/montserrat_alternates"
                         android:padding="10dp"
                         android:textColor="@android:color/black"
@@ -391,7 +391,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
                         android:layout_below="@+id/NewsTitleCard14"
-                        android:layout_marginTop="20dp" />
+                        android:layout_marginTop="20dp"
+                        android:scaleType="centerCrop" />
 
                     <TextView
                         android:id="@+id/NewsTitleCard15"
@@ -421,7 +422,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/EditTextNews04"
                         android:layout_marginTop="5dp"
-                        android:text='"https://www.n4l.co.nz/wp-content/uploads/2017/07/Blog-Youtube-1080x400.jpg"'
+                        android:text="Example: http://i.hizliresim.com/oVNLg9.jpg"
                         android:textAlignment="center"
                         android:textSize="12sp" />
 
@@ -484,7 +485,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/NewsTitleCard18"
                         android:layout_marginTop="20dp"
-                        android:background="@drawable/cardview_bg"
+                        android:background="@drawable/cardview_bg3"
                         android:fontFamily="@font/montserrat_alternates"
                         android:padding="10dp"
                         android:textColor="@android:color/black"
@@ -682,7 +683,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
                         android:layout_below="@+id/NewsTitleCard26"
-                        android:layout_marginTop="20dp" />
+                        android:layout_marginTop="20dp"
+                        android:scaleType="centerCrop" />
 
                     <TextView
                         android:id="@+id/NewsTitleCard27"
@@ -712,7 +714,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/EditTextNews07"
                         android:layout_marginTop="5dp"
-                        android:text="http://i.hizliresim.com/DDdlGl.jpg"
+                        android:text="Example: http://i.hizliresim.com/DDdlGl.jpg"
                         android:textAlignment="center"
                         android:textSize="12sp" />
 
@@ -773,7 +775,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/NewsTitleCard30"
                         android:layout_marginTop="20dp"
-                        android:background="@drawable/cardview_bg"
+                        android:background="@drawable/cardview_bg3"
                         android:fontFamily="@font/montserrat_alternates"
                         android:padding="10dp"
                         android:textColor="@android:color/black"

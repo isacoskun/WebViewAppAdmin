@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/Rel_Contact_Us"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:visibility="invisible">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/AppBarLayContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/ContactBackButton"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_back"
+                        app:backgroundTint="@color/maincolor"
+                        app:fabSize="mini"
+                        app:rippleColor="@android:color/black" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:text="Contact Us Page"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="22dp" />
+
+                </android.support.v7.widget.Toolbar>
+            </android.support.design.widget.AppBarLayout>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/CardViewContact01"
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/AppBarLayContact"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/maincolor"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/ContactTitle01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="2dp"
+                        android:text="Edit Contact Us Menu (Contact Image)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ContactTitleCard01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/ContactTitle01"
+                        android:layout_marginTop="20dp"
+                        android:text="Image size: 1080 x 400"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/ContactTitleCard02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/ContactTitleCard01"
+                        android:text="(Add a direct link to your Contact Us Menu Banner Image URL. Use the recommended image size)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:id="@+id/ContactImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_below="@+id/ContactTitleCard02"
+                        android:layout_marginTop="20dp"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/ContactTitleCard03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/ContactImage"
+                        android:layout_marginTop="20dp"
+                        android:text="Current Contact Banner Image"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextContact01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ContactTitleCard03"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Contact Us Image URL"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ContactTitleCard04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextContact01"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: http://i.hizliresim.com/WD8rbP.png"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/ContactImageButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/ContactTitleCard04"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/CardViewContact02"
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/CardViewContact01"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/maincolor"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/ContactTitle04"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="2dp"
+                        android:text="Edit Contact Us Menu (Contact Phone)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ContactTitleCard13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/ContactTitle04"
+                        android:layout_marginTop="20dp"
+                        android:text="Make sure your title is not long"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/ContactTitleCard14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/ContactTitleCard13"
+                        android:text="(The maximum number of characters recommended is 65)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/ContactPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ContactTitleCard14"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg3"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ContactTitleCard15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/ContactPhone"
+                        android:layout_marginTop="10dp"
+                        android:text="Current Contact Phone"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextContact04"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ContactTitleCard15"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Contact Phone"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ContactTitleCard16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextContact04"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: +90 543 668 27 65"
+                        android:textAlignment="textStart"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/ContactPhoneButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/ContactTitleCard16"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/CardViewContact03"
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/CardViewContact02"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/maincolor"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/ContactTitle03"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="2dp"
+                        android:text="Edit Contact Us Menu (Contact E-Mail)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ContactTitleCard09"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/ContactTitle03"
+                        android:layout_marginTop="20dp"
+                        android:text="Make sure your title is not long"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/ContactTitleCard10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/ContactTitleCard09"
+                        android:text="(The maximum number of characters recommended is 65)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/ContactEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ContactTitleCard10"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg3"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ContactTitleCard11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/ContactEmail"
+                        android:layout_marginTop="10dp"
+                        android:text="Current Contact E-Mail"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextContact03"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ContactTitleCard11"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Contact E-Mail"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ContactTitleCard12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextContact03"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: ixastudio@outlook.com"
+                        android:textAlignment="textStart"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/ContactEmailButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/ContactTitleCard12"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/CardViewContact04"
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/CardViewContact03"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/maincolor"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/ContactTitle02"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/cardview_bg"
+                        android:padding="2dp"
+                        android:text="Edit Contact Us Menu (Contact Address)"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ContactTitleCard05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/ContactTitle02"
+                        android:layout_marginTop="20dp"
+                        android:text="Make sure your title is not long"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/ContactTitleCard06"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/ContactTitleCard05"
+                        android:text="(The maximum number of characters recommended is 65)"
+                        android:textAlignment="textEnd"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/ContactAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ContactTitleCard06"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg3"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ContactTitleCard07"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/ContactAddress"
+                        android:layout_marginTop="10dp"
+                        android:text="Current Contact Address"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/EditTextContact02"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ContactTitleCard07"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cardview_bg2"
+                        android:hint="Add Contact Address"
+                        android:padding="5dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ContactTitleCard08"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EditTextContact02"
+                        android:layout_marginTop="5dp"
+                        android:text="Example: Anadolu Hisarı Mh. Çınarlı Sk. No:41, 34810 Beykoz/İstanbul"
+                        android:textAlignment="textStart"
+                        android:textSize="12sp" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/ContactAddressButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/ContactTitleCard08"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_send"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/white"
+                        app:rippleColor="@android:color/black" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
